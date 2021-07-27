@@ -1,0 +1,34 @@
+acessar os valor de uma teg que tenha um texto, tras so um item
+let titulo = documet.querySelector("h1");
+console.log(titulo);
+console.log(titulo.textContent);
+
+titulo.textContent = "outro titulo"; (alterar o valor do texto)
+
+para trazer um array.
+document.querySelectorAll("seletor") 
+
+Para acessar alterar um estilo aplicado
+document.style.color ou document.style.backgroundColor
+
+Para adicionar um classe 
+
+document.classList.add()
+
+adicionando evendo
+variavelQueRecebeuUmaTeg.addEventListener("click", nomedafuncao)
+variavelQueRecebeuUmaTeg.addEventListener("click", function(){
+
+})
+
+para tirar o comportamento padrao de um botao dentro de um form que é de enviar o formulario
+e recarregar a pagina
+variavelQueRecebeuUmaTeg.addEventListener("click", function(event){
+event.preventDefault()
+}
+
+criar elemento no html
+var elemento= document.crieteElement("teg");
+
+adicionar um elemento filho no html
+varElementoPai.appendChild(elementoFilho)

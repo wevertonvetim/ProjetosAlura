@@ -1,0 +1,268 @@
+body{
+	font-family: 'Montserrat', sans-serif;
+}
+header {
+    background: #BBBBBB;
+    padding: 20px 0;
+}
+
+.caixa {
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+}
+
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px;
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+nav a:hover{
+	color:#c78c19;
+	text-decoration: underline;
+}
+
+.produtos{
+	width: 940px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.produtos li{
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+	vertical-align: top;
+	margin: 0 1.5%;
+	padding: 30px 20px;
+	box-sizing: border-box;
+	border: 2px solid #000000;
+	border-radius: 10px;
+}
+
+.produtos li:hover{
+	border-color:#c78c19;
+}
+
+.produtos li:active{
+	border-color:#088C19;
+}
+
+.produtos li:hover h2{
+	font-size: 34px;
+}
+
+.produtos h2{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.produtos-descricao{
+	font-size: 18px;
+}
+
+.produtos-preco{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+footer{
+	text-align: center;
+	background:url(imagens/bg.jpg);
+	padding: 50px;
+}
+
+.copyrigth{
+	color: #FFFFFF;
+	font-size: 13px;
+	margin: 20px 0 0;
+}
+
+main{
+	background: linear-gradient(#ffffff, #888888);
+}
+.contato-conteudo{
+	width: 940px;
+	margin: 0 auto;
+}
+
+form{
+	margin: 40px 0;
+}
+
+ form label, form legend{
+ 	display: block;
+ 	margin: 0 0 10px;
+ 	font-size: 20px;
+
+ }
+
+ .input-padrao{
+ 	display: block;
+ 	margin: 0 0 10px;
+ 	padding: 10px 25px;
+ 	width: 50%;
+ }
+
+ .checkbox{
+ 	margin: 15px 0;
+ }
+
+ .enviar{
+ 	width: 40%;
+ 	background:orange;
+ 	padding: 10px 0;
+ 	color: white;
+ 	font-weight: bold;
+ 	font-size: 18px;
+ 	border:none;
+ 	border-radius: 5px;
+ 	transition: 1s all;
+ 	cursor: pointer;
+
+ }
+
+ .enviar:hover{
+ 	background: darkorange;
+ 	transform: scale(1.2);
+ }
+.tabela-conteudo{
+	padding: 1em 0 3em 0;
+}
+
+ table tbody{
+ 	padding: 0 0 2em 0;
+ }
+
+ thead{
+ 	background:#444444;
+ 	color:#ffffff;
+ 	font-weight: bold;
+ }
+ 
+ table td, table th{
+ 	border:1px solid black;
+ 	padding: 8px 15px;
+ }
+ /*css da pagina inicial*/
+
+ .banner{
+ 	width: 100%;
+ }
+
+ .titulo-principal{
+ 	text-align: center;
+ 	font-size: 2em;
+ 	margin: 0 0 1em;
+ 	clear: left;
+ }
+ .principal{
+ 	padding: 3em 0;
+ 	width: 940px;
+	margin: 0 auto;
+ }
+
+ .principal p{
+ 	margin:  0 0 1em;
+ }
+.beneficios{
+	width: 640px;
+	margin: 0 auto;
+	color: rgba(0,0,0,.9);
+}
+
+.Lista-beneficios{
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+}
+.itens{
+	line-height: 1.5;
+}
+.itens:first-child{    /* : lest-child / nth-child(n) first-line / firt-letter */
+	font-weight: bold;
+}
+.itens:before{ /* :after*/
+	content: "🟊";
+}
+
+ .imagem-beneficios{
+ 	width: 60%;
+ 	opacity: 1;
+ 	transition: 400ms all;
+ 	box-shadow: 10px 10px 10px 0 #000000; /*text-shadow:x y espalhamento espancao e cor cria uma cor para o elemento*/ 
+ }
+ .imagem-beneficios:hover{
+ 	opacity: 0.5;
+ }
+
+ .utensilios{
+ 	width: 120px;
+ 	float: left;
+ 	margin: 0 20px 20px 0;
+ }
+ .mapa{
+ 	margin: 3em 0;
+ 	width: 940px;
+	margin: 0 auto;
+ }
+ .mapa-conteudo{
+ 	width: 940px;
+ 	margin: 0 auto;
+ }
+ .mapa p{
+ 	margin: 2em 0;
+ 	text-align: center;
+ }
+ .video{
+ 	width: 540px;
+ 	margin: 0 auto;
+ 	padding: 3em 0;
+ }
+
+/* seletores avancados
+main > p{} seleciona os filhos diretos
+img + p{} selecina o primero irmao
+img ~ p{} seleciona todos os irmaos depois do img
+
+.principal p:not(#missao){} todos os p que estao na classe principal que nao tem o id missao
+
+calculo com css
+
+    width: calc(20% - 100px);
+
+*/
+
+@media screen and (max-width: 480px){
+	.principal,.mapa,.mapa-conteudo,.video,.caixa, .conteudo-beneficios{
+  		width: auto;
+ 	}
+ 	h1{
+ 		text-align: center;
+ 	}
+ 	nav{
+ 		position: static;
+ 		text-align: center;
+ 	}
+ 	nav a{
+ 		font-size: 20px;
+ 	}   
+ 	.lista-beneficios, .imagem-beneficios {
+        width: 100%;
+    }
+
+}
