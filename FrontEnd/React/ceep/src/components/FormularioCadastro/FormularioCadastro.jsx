@@ -1,51 +1,46 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./estilo.css";
-class FormularioCadastro extends Component {
 
-  constructor(props){
-    super(props);
-    this.titulo = "";
-    this.texto = "";
-  }
+function FormularioCadastro(props) {
+  const [titulo, setTitulo] = useState("");
+  const [texto, setTexto] = useState("");
+  
 
-  _handleMudançaTitulo(evento){
+  const handleMudançaTitulo = (evento) => {
     evento.stopPropagation();
-    this.titulo = evento.target.value;
+    setTitulo(evento.target.value);
   }
-  _handleMudançaTexto(evento){
+  const handleMudançaTexto = (evento) => {
     evento.stopPropagation();
-    this.texto = evento.target.value;
+    setTexto(evento.target.value);
   }
 
-  _criarNota(evento){
+  const criarNota = (evento) =>  {
     evento.preventDefault();
     evento.stopPropagation();
-    this.props.criarNota(this.titulo,this.texto);
+    props.criarNota(titulo,texto);
   }
 
-  render() {
-    return (
-      <form className="form-cadastro " 
-      onSubmit = {this._criarNota.bind(this)}
-      >
-        <input
-          type="text"
-          placeholder="Título"
-          className="form-cadastro_input"
-          onChange = {this._handleMudançaTitulo.bind(this)}
-        />
-        <textarea
-          rows={15}
-          placeholder="Escreva sua nota..."
-          className="form-cadastro_input"
-          onChange = {this._handleMudançaTexto.bind(this)}
-        />
-        <button className="form-cadastro_input form-cadastro_submit">
-          Criar Nota
-        </button>
-      </form>
-    );
-  }
+  return (
+    <form className="form-cadastro " 
+    onSubmit = {criarNota}
+    >
+      <input
+        type="text"
+        placeholder="Título"
+        className="form-cadastro_input"
+        onChange = {handleMudançaTitulo}
+      />
+      <textarea
+        rows={15}
+        placeholder="Escreva sua nota..."
+        className="form-cadastro_input"
+        onChange = {handleMudançaTexto}
+      />
+      <button className="form-cadastro_input form-cadastro_submit">
+        Criar Nota
+      </button>
+    </form>
+  );
 }
-
 export default FormularioCadastro;
