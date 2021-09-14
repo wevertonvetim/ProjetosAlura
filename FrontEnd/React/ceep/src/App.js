@@ -1,31 +1,25 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import ListaDeNotas from "./components/ListaDeNotas";
 import FormularioCadastro from "./components/FormularioCadastro";
 import "./assets/App.css";
 import './assets/index.css';
-class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      notas: []
-    }
-  }
-  criarNota(titulo,texto){
+function App () {
+  const [notas, setNotas] = useState([]);
+  useEffect(()=>{
+    console.log(notas)
+  }, [notas])
+  const criarNota = (titulo,texto)=>{
     const novaNota = {titulo,texto};
-    const novoArrayNotas = [...this.state.notas,novaNota];
-    const novoEstado = {
-      notas:novoArrayNotas
-    }
-    this.setState(novoEstado);
+    const novoArrayNotas = [...notas,novaNota];
+    setNotas(novoArrayNotas);
   }
-  render() {
-    return (
-      <section className="conteudo">
-        <FormularioCadastro criarNota = {this.criarNota.bind(this)} />
-        <ListaDeNotas notas = {this.state.notas}/>
-      </section>
-    );
-  }
+
+  return (
+    <section className="conteudo">
+      <FormularioCadastro criarNota = {criarNota} />
+      <ListaDeNotas notas = {notas}/>
+    </section>
+  );
 }
 
 export default App;

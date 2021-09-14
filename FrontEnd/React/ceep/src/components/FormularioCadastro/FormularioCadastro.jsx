@@ -5,7 +5,6 @@ function FormularioCadastro(props) {
   const [titulo, setTitulo] = useState("");
   const [texto, setTexto] = useState("");
   
-
   const handleMudançaTitulo = (evento) => {
     evento.stopPropagation();
     setTitulo(evento.target.value);
